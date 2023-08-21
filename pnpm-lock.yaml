@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@vue/reactivity':
+    specifier: ^3.3.4
+    version: 3.3.4
   ar-catch:
     specifier: ^0.0.23
     version: 0.0.23(typescript@5.1.6)
@@ -213,6 +216,16 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@vue/reactivity@3.3.4:
+    resolution: {integrity: sha512-kLTDLwd0B1jG08NBF3R5rqULtv/f8x3rOFByTDz4J53ttIQEDmALqKqXY0J+XQeN0aV2FBxY8nJDf88yvOPAqQ==}
+    dependencies:
+      '@vue/shared': 3.3.4
+    dev: false
+
+  /@vue/shared@3.3.4:
+    resolution: {integrity: sha512-7OjdcV8vQ74eiz1TZLzZP4JwqM5fA94K6yntPS5Z25r9HDuGNzaGdgvwKYq6S+MxwF0TFRwe50fIR/MYnakdkQ==}
+    dev: false
 
   /ar-catch@0.0.23(typescript@5.1.6):
     resolution: {integrity: sha512-4jBxYrp0f3vn+yfWiGxr49i+OrUwe0UH5qHvOoBAUKYYyX/ELdfTOGk3uBqMQhdkoPF54arExCHhm/mdC+0zIg==}

@@ -12,6 +12,7 @@
     "vite": "^4.4.5"
   },
   "dependencies": {
+    "@vue/reactivity": "^3.3.4",
     "ar-catch": "^0.0.23"
   }
 }

@@ -5,9 +5,33 @@
     <link rel="icon" type="image/svg+xml" href="/javascript.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
+    <style>
+      .btn {
+        background-color: #dcd5f8;
+        border: 1px solid #99999941;
+        border-radius: 10px;
+        padding: 0.5rem 0.75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+      }
+      .btn:active {
+        transform: scale(0.98);
+      }
+
+      #count {
+        font-weight: bold;
+      }
+    </style>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <button class="btn">
+        <span>Count is: </span>
+        <span id="count">0</span>
+      </button>
+    </div>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
