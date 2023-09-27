@@ -1,19 +1,24 @@
-import { createServer } from "http";
+import express from "express";
 
-const PORT = 8080;
-const server = createServer((req, res) => {
-  res.writeHead(200, {
-    "Content-Type": "application/json",
-  });
+const app = express();
 
-  res.end(
-    JSON.stringify({
-      name: "Ahmed Ragab",
-      awesome: true,
-    })
-  );
+app.get("/", (req, res) => {
+  res.send(`
+    <html>
+      <head>
+        <title>My First HTML</title>
+      </head>
+      <body>
+        <h1
+          style="color: green; font-size: 50px; text-align: center; margin-top: 100px;"
+        >
+          From Express Server
+        </h1>
+      </body>
+    </html>
+  `);
 });
 
-server.listen(PORT, () => {
-  console.log(`The server started listening on port ${PORT}....`);
+app.listen(8080, () => {
+  console.log("Example app listening on port 8080!");
 });
