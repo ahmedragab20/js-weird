@@ -1,14 +1,20 @@
-import { mkdir, writeFile } from "node:fs";
+import { createServer } from "http";
 
-// Create ./tmp/a/apple, regardless of whether ./tmp and ./tmp/a exist.
-mkdir("./tmp/a/apple", { recursive: true }, (err) => {
-  if (err) throw err;
+const PORT = 8080;
 
-  console.log("Directory created");
+const server = createServer((req, res) => {
+  res.writeHead(200, {
+    "Content-Type": "application/json",
+  });
 
-  // write something to the file
-  writeFile("./tmp/a/apple/file.txt", "Hello Node.js", (err) => {
-    if (err) throw err;
-    console.log("File written to");
-  })
+  res.end(
+    JSON.stringify({
+      name: "Ahmed Ragab",
+      awesome: true,
+    })
+  );
+});
+
+server.listen(PORT, () => {
+  console.log(`The server started listening on port ${PORT}....`);
 });
