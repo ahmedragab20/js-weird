@@ -188,6 +188,36 @@ const products = [
   },
 ];
 
+app.use(
+  express.json({
+    limit: "5kb",
+    verify: (req, res, buf) => {
+      console.log("What is the buffer?");
+    },
+  })
+);
+
+app.post("/new-product", (req, res) => {
+  const { body } = req;
+  console.log(body);
+
+  if (!body || (typeof body === "object" && !Object.keys(body).length)) {
+    res.status(400);
+    return res.json({ error: "No body provided" });
+  } else if (!body.name) {
+    return res.json({ error: "No name provided" });
+  } else if (!body.price) {
+    return res.json({ error: "No price provided" });
+  }
+
+  const id = Math.random().toString(36).substring(7);
+  products.push({
+    id,
+    ...body,
+  });
+  res.json({ id });
+});
+
 app.get("/", (req, res) => {
   res.send(
     // dawn middleware
