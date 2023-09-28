@@ -3,6 +3,8 @@ const app = express();
 import postsRouter from "./router/posts.rt.mjs";
 import imagesRouter from "./router/images.rt.mjs";
 
+app.use(express.static(`${process.cwd()}/public`));
+
 app.use(
   express.json({
     limit: "5kb",
